@@ -20,7 +20,7 @@
 ## 🧱 项目结构
 
 ```
-gstreamer-framework/
+gst-orchestrator/
 ├── CMakeLists.txt
 ├── config/
 │   └── pipelines.yaml
