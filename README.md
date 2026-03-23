@@ -139,6 +139,8 @@ grpcurl -help
 
 ```bash
 grpcurl -plaintext \
+  -import-path ./proto \
+  -proto pipeline.proto \
   -d '{"id":"test_pipeline"}' \
   localhost:50051 pipeline.PipelineService/Start
 ```
@@ -211,6 +213,8 @@ pipeline.PipelineService
 
 ```bash
 grpcurl -plaintext \
+  -import-path ./proto \
+  -proto pipeline.proto \
   -d '{"id":"test_pipeline"}' \
   localhost:50051 pipeline.PipelineService/Start
 ```
@@ -219,6 +223,8 @@ grpcurl -plaintext \
 
 ```bash
 grpcurl -plaintext \
+  -import-path ./proto \
+  -proto pipeline.proto \
   -d '{"id":"test_pipeline"}' \
   localhost:50051 pipeline.PipelineService/Stop
 ```
@@ -239,27 +245,6 @@ undefined reference to pipeline::PipelineService
 
 ---
 
-### ❌ 2. grpcurl 报错
-
-```
-server does not support the reflection API
-```
-
-✅ 解决：
-
-方法1（推荐）：启用 reflection
-方法2：
-
-```bash
-grpcurl -plaintext \
-  -import-path ./proto \
-  -proto pipeline.proto \
-  ...
-```
-
----
-
----
 
 ## 🚀 后续规划
 
