@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pipeline;
+
+service PipelineService {
+  rpc Start (StartRequest) returns (CommonReply);
+  rpc Stop  (StopRequest)  returns (CommonReply);
+}
+
+message StartRequest {
+  string id = 1;
+}
+
+message StopRequest {
+  string id = 1;
+}
+
+message CommonReply {
+  bool success = 1;
+  string message = 2;
+}

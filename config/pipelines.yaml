@@ -1,0 +1,16 @@
+pipelines:
+  - id: test_pipeline
+    auto_start: false
+    elements:
+      - name: src
+        type: videotestsrc
+
+      - name: conv
+        type: videoconvert
+
+      - name: sink
+        type: autovideosink
+
+    links:
+      - [src, conv]
+      - [conv, sink]
